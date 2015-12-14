@@ -2,3 +2,18 @@ body {
   padding-left: 25px;
   background-color: green;
 }
+
+#friends {
+  margin-top: 25px;
+}
+
+  #friends thead td {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  #friends tbody td {
+    border: 1px solid black;
+    padding-left: 5px;
+
+  }

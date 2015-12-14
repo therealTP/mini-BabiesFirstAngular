@@ -8,15 +8,36 @@
   <body ng-controller="mainCtrl">
     <p>Hello, my name is {{myName}}.</p>
     <h1>Mah Frends</h1>
-    <input ng-model="newFriend"></input>
-    <button ng-click="addFriend(newFriend)">Add</button>
+    <h3>Add new friend:</h3>
+    Name: <input ng-model="newName"></input>
+    Age: <input ng-model="newAge"></input>
+    <button ng-click="addFriend(newName, newAge)">Add</button>
     <h3>Filter Friends</h3>
-    <input ng-model="name"></input>
-    <div ng-repeat="name in homies | filter: name">
-      <p>
-        {{name}}
-      </p>
-    </div>
+    By name:<input ng-model="homiesFilter.name"></input>
+    By age:<input ng-model="homiesFilter.age"></input>
+    <table id="friends">
+      <thead>
+        <tr>
+          <td>
+            Name
+          </td>
+          <td>
+            Age
+          </td>
+       </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="friend in homies | filter: homiesFilter">
+          <td>
+            {{friend.name}}
+          </td>
+          <td>
+            {{friend.age}}
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="js/app.js" type="text/javascript"></script>
