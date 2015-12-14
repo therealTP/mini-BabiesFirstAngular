@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="friendsList">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body ng-controller="mainCtrl">
+    <p>Hello, my name is {{myName}}.</p>
+    <h1>Mah Frends</h1>
+    <input ng-model="newFriend"></input>
+    <button ng-click="addFriend(newFriend)">Add</button>
+    <h3>Filter Friends</h3>
+    <input ng-model="name"></input>
+    <div ng-repeat="name in homies | filter: name">
+      <p>
+        {{name}}
+      </p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/mainCtrl.js" type="text/javascript"></script>
+  </body>
+</html>
